@@ -1,0 +1,60 @@
+// Nilay Bhatia
+// E&TC-A3
+// 24070123063
+
+// To study and implement C++ Bitwise Operators
+#include <iostream>
+using namespace std;
+
+int main(){
+int a = 12;
+int b = 9;
+cout << "a & b: " << (a&b)<< endl;
+cout << "a | b: " << (a|b)<< endl;
+cout << "a ^ b: " << (a^b)<< endl;
+cout << "-a: "<< (-a) << endl;
+cout << "-b: "<< (-b) << endl;
+cout << "a << 1 = " << (a << 1) << endl;
+cout << "b >> 1 = " << (b >> 1) << endl;
+        
+    return 0;
+}
+
+// set and reset a bit
+#include <iostream>
+using namespace std;
+
+
+std::string intToBinary(int n) {
+    if (n == 0) return "0";
+
+    std::string binary = "";
+    while (n > 0) {
+        binary = std::to_string(n % 2) + binary;
+        n = n / 2;
+    }
+    return binary;
+}
+
+int main() {
+   
+ int bitToSet, num;
+    cout << "Enter bit to set: ";
+    cin >> bitToSet;
+    cout << "Enter num: ";
+    cin >> num;
+
+    cout << "Original number in binary: " << intToBinary(num) << "\n";
+
+    int part = 1 << bitToSet;
+    num = num | part;  
+
+    cout << "Number after setting bit " << bitToSet << " in decimal: " << num << "\n";
+    cout << "Number after setting bit in binary: " << intToBinary(num) << "\n";
+   
+    int part2= ~(part);
+    int rev=num & part2;
+    cout << "Number after resetting bit " << bitToSet << " in decimal: " << rev << "\n";
+    cout << "Number after resetting bit in binary: " << intToBinary(rev) << "\n";
+
+    return 0;
