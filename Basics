@@ -1,0 +1,32 @@
+// Nilay Bhatia
+// E&TC-A3
+// 24070123063
+
+// To study and implement C++ Bitwise Operators
+
+#include <iostream>
+using namespace std;
+
+int main(){
+int a = 12;
+int b = 9;
+cout << "a & b: " << (a&b)<< endl;
+cout << "a | b: " << (a|b)<< endl;
+cout << "a ^ b: " << (a^b)<< endl;
+cout << "-a: "<< (-a) << endl;
+cout << "-b: "<< (-b) << endl;
+cout << "a << 1 = " << (a << 1) << endl;
+cout << "b >> 1 = " << (b >> 1) << endl;
+        
+    return 0;
+}
+
+Expected Output :- 
+a & b: 8
+a | b: 13
+a ^ b: 5
+-a: -12
+-b: -9
+a << 1 = 24
+b >> 1 = 4
+
