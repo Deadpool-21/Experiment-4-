@@ -1,0 +1,48 @@
+Nilay Bhatia 
+24070123063 - Prn
+Entc A3
+
+// set and reset a bit
+#include <iostream>
+using namespace std;
+
+
+std::string intToBinary(int n) {
+    if (n == 0) return "0";
+
+    std::string binary = "";
+    while (n > 0) {
+        binary = std::to_string(n % 2) + binary;
+        n = n / 2;
+    }
+    return binary;
+}
+
+int main() {
+   
+ int bitToSet, num;
+    cout << "Enter bit to set: ";
+    cin >> bitToSet;
+    cout << "Enter num: ";
+    cin >> num;
+
+    cout << "Original number in binary: " << intToBinary(num) << "\n";
+
+    int part = 1 << bitToSet;
+    num = num | part;  
+
+    cout << "Number after setting bit " << bitToSet << " in decimal: " << num << "\n";
+    cout << "Number after setting bit in binary: " << intToBinary(num) << "\n";
+   
+    int part2= ~(part);
+    int rev=num & part2;
+    cout << "Number after resetting bit " << bitToSet << " in decimal: " << rev << "\n";
+    cout << "Number after resetting bit in binary: " << intToBinary(rev) << "\n";
+
+    return 0;
+}
+
+Expected Output :- 
+Enter bit to set: 2
+Enter num: 5
+
